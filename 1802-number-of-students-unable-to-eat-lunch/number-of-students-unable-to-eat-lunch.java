@@ -8,7 +8,7 @@ class Solution {
 
         // Students ko queue me daalo
         for (int student : students) {
-            queue.offer(student);
+            queue.add(student);
         }
 
         // Sandwiches ko reverse order me stack me daalo
@@ -23,14 +23,14 @@ class Solution {
             // Agar front student aur top sandwich same hain
             if (queue.peek().equals(stack.peek())) {
 
-                queue.poll();   // Student queue se bahar
+                queue.remove();   // Student queue se bahar
                 stack.pop();    // Sandwich stack se bahar
                 rotate = 0;     // Rotation reset
 
             } else {
 
                 // Student ko queue ke peeche bhej do
-                queue.offer(queue.poll());
+                queue.add(queue.remove());
                 rotate++;
             }
         }
