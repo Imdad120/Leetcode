@@ -1,0 +1,19 @@
+class Solution {
+public:
+    bool findSubarrays(vector<int>& nums) {
+        unordered_set<int>st;
+
+        for(int i=0; i<=nums.size()-2; i++)
+        
+        {
+            int sum=nums[i]+nums[i+1];
+            if(st.count(sum))
+            return true;
+
+            else{
+                st.insert(sum);
+            }
+        }
+        return false;
+    }
+};
