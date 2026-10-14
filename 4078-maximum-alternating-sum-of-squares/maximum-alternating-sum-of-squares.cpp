@@ -1,26 +1,25 @@
-#include <vector>
-#include <algorithm>
-
 class Solution {
 public:
-    long long maxAlternatingSum(std::vector<int>& nums) {
-        int n = nums.size();
-        std::vector<long long> squares(n);
-        for (int i = 0; i < n; i++) {
-            squares[i] = (long long)nums[i] * nums[i];
+    long long maxAlternatingSum(vector<int>& nums) {
+        for(int k=0; k<nums.size(); k++)
+        {
+            nums[k] = nums[k] * nums[k];
         }
-        std::sort(squares.begin(), squares.end());
-        
-        long long total = 0;
-        int negCount = n / 2;
-        
-        for (int i = 0; i < n; i++) {
-            if (i < negCount) {
-                total -= squares[i];
-            } else {
-                total += squares[i];
+        sort(nums.begin(), nums.end());
+        long long ans = 0;
+        int n = nums.size();
+        for(int i = 0; i < n; i++)
+        {
+            if(i < n / 2)
+            {
+                ans -= nums[i];
+            }
+            else
+            {
+                ans += nums[i];
             }
         }
-        return total;
+        return ans;
+        
     }
 };
