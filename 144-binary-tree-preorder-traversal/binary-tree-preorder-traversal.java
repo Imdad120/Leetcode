@@ -1,4 +1,4 @@
-
+// by Iteration 
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
          ArrayList<Integer> ans =  new ArrayList<>();
