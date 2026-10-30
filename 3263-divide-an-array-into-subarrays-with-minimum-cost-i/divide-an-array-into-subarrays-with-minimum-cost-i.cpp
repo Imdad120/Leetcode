@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int minimumCost(vector<int>& nums) {
+        int n=nums.size();
+        int ans=nums[0];
+        int min1=51;
+        int min2=51;
+
+        for(int i=1; i<=n-1; i++)
+        {
+            if(nums[i]<min1)
+            {
+                 min2=min1;
+                min1=nums[i];
+               
+            }
+            else if(nums[i]<min2)
+            {
+                
+                min2=nums[i];
+            }
+            
+
+        }
+        ans=ans+min1+min2;
+        return ans;
+        
+    }
+};
