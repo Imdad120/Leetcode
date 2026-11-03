@@ -17,19 +17,19 @@ class Solution {
     int sum = 0;
 
     public TreeNode bstToGst(TreeNode root) {
-        GST(root);
+        inorder(root);
         return root;
     }
 
-    void GST(TreeNode root) {
+    void inorder(TreeNode root) {
         if (root == null) return;
 
-        GST(root.right);
+        inorder(root.right);
 
         sum += root.val;
         root.val = sum;
 
-        GST(root.left);
+        inorder(root.left);
     }
 }
 
