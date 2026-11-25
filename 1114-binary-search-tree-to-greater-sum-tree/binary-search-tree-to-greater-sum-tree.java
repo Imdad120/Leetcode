@@ -1,19 +1,23 @@
-class Solution {
-    int sum = 0;
 
+class Solution {
+     int sum = 0;
     public TreeNode bstToGst(TreeNode root) {
+        
+
         inorder(root);
         return root;
     }
-
-    void inorder(TreeNode root) {
-        if (root == null) return;
+     void inorder(TreeNode root){
+       
+        if(root == null) return;
 
         inorder(root.right);
-
-        sum += root.val;
+        sum +=root.val;
         root.val = sum;
 
         inorder(root.left);
     }
 }
+
+
+
